@@ -1,0 +1,23 @@
+{
+  "name": "@bitovi/incremental",
+  "version": "1.0.0",
+  "description": "Incremental rendering - Boot your SPA faster",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "incremental": "bin/incremental"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitovi/incremental.git"
+  },
+  "keywords": ["ssr", "server-side-rendering", "react", "vue", "vuejs", "angular", "donejs"],
+  "author": "Bitovi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bitovi/incremental/issues"
+  },
+  "homepage": "https://github.com/bitovi/incremental#readme"
+}

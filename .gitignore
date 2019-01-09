@@ -3,3 +3,4 @@ test/tests/node_modules/
 doc/
 .idea/
 package-lock.json
+.inccache/

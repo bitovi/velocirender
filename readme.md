@@ -64,7 +64,18 @@ const { ReactDOM, App } = require('./dist/webpack-build-whatever.js');
 const express = require('express');
 const app = express();
 
+// Add any normal Express middlware you use here.
 app.use(express.static(__dirname + '/build', { index: false }));
+
+// Add this last.
+app.use(incremental(({ document, request }) => {
+  let root = document.createElement('div');
+  root.setAttribute("id", "root");
+  document.body.appendChild(root);
+  ReactDOM.render(React.createComponent(App), root);
+}));
+
+app.listen(8080);
 ```
 
 > *Note* that `{ index: false }` is provided to `express.static`. This disables [serving the index.html](https://expressjs.com/en/resources/middleware/serve-static.html#index) file for routes like `/`. This is disabled in this example because __incremental__ will handle those routes.

@@ -1,3 +1,7 @@
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/bitovi/incremental/blob/master/LICENSE.md)
+[![npm version](https://badge.fury.io/js/@bitovi/incremental.svg)](http://badge.fury.io/js/@bitovi/incremental)
+[![Build Status](https://travis-ci.org/bitovi/incremental.svg?branch=master)](https://travis-ci.org/bitovi/incremental)
+
 # @bitovi/incremental
 
 Accelerated server-side rendering.

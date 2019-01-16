@@ -2,6 +2,28 @@
 
 Accelerated server-side rendering.
 
+- [Install](#install)
+- [Usage](#usage)
+  - [CLI](#cli)
+    - [Flags](#flags)
+    - [Cache considerations](#cache-considerations)
+  - [JavaScript API](#javascript-api)
+    - [Callback argument](#callback-argument)
+
+## Install
+
+Install from [npm](https://www.npmjs.com/):
+
+```shell
+npm install @bitovi/incremental
+```
+
+Or [Yarn](https://yarnpkg.com/en/):
+
+```shell
+yarn add @bitovi/incremental
+```
+
 ## Usage
 
 __incremental__ comes with CLI and JavaScript APIs.
@@ -53,7 +75,7 @@ const handler = incremental(({ document, request }) => {
   ReactDOM.render(React.createComponent(App), root);
 });
 
-require('http').createServer(handler);
+require('http').createServer(handler).listen(8080);
 ```
 
 Note the above doesn't handle static assets. If you are using the http module directly you probably already know how to handle this, but most will likely want to use a framework like [Express](https://expressjs.com/). Here's an example that does so:
@@ -89,6 +111,10 @@ __incremental__ takes a handler function as its only argument. That function rec
 * __document__: A [document](https://developer.mozilla.org/en-US/docs/Web/API/Document) that is scoped to this request. You can modify this document just as you would in a browser. Typically you'll want to create a root element to render your application onto. This document is backed by [jsdom](https://github.com/jsdom/jsdom).
 * __window__: A [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object. This contains many (but not all) of the properties that are seen in a browser window.
 
+## Changelog
+
+See the [latest releases on GitHub](https://github.com/bitovi/incremental/releases).
+
 ## License
 
-MIT
+[MIT](https://github.com/bitovi/incremental/blob/master/license.md)

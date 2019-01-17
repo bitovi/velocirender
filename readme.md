@@ -7,12 +7,14 @@
 Accelerated server-side rendering.
 
 - [Install](#install)
+- [Getting Started](https://github.com/bitovi/incremental/blob/master/docs/getting-started.md)
 - [Usage](#usage)
   - [CLI](#cli)
     - [Flags](#flags)
     - [Cache considerations](#cache-considerations)
   - [JavaScript API](#javascript-api)
     - [Callback argument](#callback-argument)
+- [Browser Compatibility](#browser-compatibility)
 
 ## Install
 
@@ -27,6 +29,18 @@ Or [Yarn](https://yarnpkg.com/en/):
 ```shell
 yarn add @bitovi/incremental
 ```
+
+## Getting Started
+
+The [Getting Started guide](https://github.com/bitovi/incremental/blob/master/docs/getting-started.md) goes over everything in much more depth but here is a primer.
+
+Once you've installed incremental you can use the CLI to start a server and point at an HTTP(S) endpoint like so:
+
+```shell
+node_modules/.bin/incremental https://bitovi.github.io/dog-things-react/
+```
+
+This will tell you to visit [http://localhost:8080](http://localhost:8080) where you see the sight load incrementally. [Continue on with the guide](https://github.com/bitovi/incremental/blob/master/docs/getting-started.md) which walks you through what is happening and how to integrate this into your workflow.
 
 ## Usage
 
@@ -82,7 +96,7 @@ const handler = incremental(({ document, request }) => {
 require('http').createServer(handler).listen(8080);
 ```
 
-Note the above doesn't handle static assets. If you are using the http module directly you probably already know how to handle this, but most will likely want to use a framework like [Express](https://expressjs.com/). Here's an example that does so:
+Note the above doesn't handle serving static assets. If you are using the http module directly you probably already know how to handle this, but most will likely want to use a framework like [Express](https://expressjs.com/). Here's an example that does so:
 
 ```js
 const incremental = require('@bitovi/incremental');
@@ -98,7 +112,7 @@ app.use(incremental(({ document, request }) => {
   let root = document.createElement('div');
   root.setAttribute("id", "root");
   document.body.appendChild(root);
-  ReactDOM.render(React.createComponent(App), root);
+  ReactDOM.render(React.createElement(App), root);
 }));
 
 app.listen(8080);
@@ -114,6 +128,17 @@ __incremental__ takes a handler function as its only argument. That function rec
 * __response__: The [response](https://nodejs.org/api/http.html#http_class_http_serverresponse) object from the request. Note that can set headers on this response, but you won't want to call `.write()` or `.end()` as incremental calls those itself.
 * __document__: A [document](https://developer.mozilla.org/en-US/docs/Web/API/Document) that is scoped to this request. You can modify this document just as you would in a browser. Typically you'll want to create a root element to render your application onto. This document is backed by [jsdom](https://github.com/jsdom/jsdom).
 * __window__: A [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object. This contains many (but not all) of the properties that are seen in a browser window.
+
+## Browser Compatibility
+
+__incremental__ utilizes recent additions to the browser specs such as [preload](https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content), [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), and [ReadableStream](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream).
+
+As of today incremental rendering is possible in Chrome and Safari >=12.
+
+In browsers that don't support these technology incremental will fallback to the traditional SSR method of waiting for a fully rendered page. We call these separate ___strategies___:
+
+* __incremental__ strategy is for modern browsers with streaming capabilities.
+* __legacy__ strategy is for older browsers.
 
 ## Changelog
 

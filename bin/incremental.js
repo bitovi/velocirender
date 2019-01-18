@@ -10,7 +10,7 @@ const cli = meow(`
 
     Examples
       $ incremental build/index.html
-	  $ incremental https://bitovi.github.io/dog-things-react/ --port 8085
+      $ incremental https://bitovi.github.io/dog-things-react/ --port 8085
 `, {
     flags: {
         port: {

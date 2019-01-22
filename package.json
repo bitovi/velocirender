@@ -1,6 +1,6 @@
 {
   "name": "@bitovi/incremental",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Incremental rendering - Boot your SPA faster",
   "main": "index.js",
   "scripts": {

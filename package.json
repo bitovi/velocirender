@@ -33,6 +33,7 @@
   ],
   "homepage": "https://github.com/bitovi/incremental#readme",
   "dependencies": {
+    "@sindresorhus/slugify": "^0.8.0",
     "can-zone-jsdom": "^2.0.1",
     "done-serve": "^3.2.0",
     "done-ssr": "^3.2.0",

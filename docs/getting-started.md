@@ -134,4 +134,4 @@ What this will mean is that you will only ever need to deploy your back-end code
 
 ## Next Steps
 
-We invite you to join the [Bitovi Community Slack](https://tinyurl.com/BitoviCommunitySlack) and come to the __performance__ room to get help from the community on setting up incremental rendering in your application.
+We invite you to join the [Bitovi Community Slack](https://tinyurl.com/BitoviCommunitySlack) and come to the __#performance__ room to get help from the community on setting up incremental rendering in your application.

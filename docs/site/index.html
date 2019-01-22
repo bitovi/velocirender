@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<title>Incremental site</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./site.css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/atom-one-dark.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js" defer></script>
+<script type="module" src="./app.js"></script>
+
+<header>
+  <h1>Incremental</h1>
+</header>
+
+<section class="installation">
+  <pre><code class="language-bash">npm install @bitovi/incremental
+
+node_modules/.bin/incremental https://bitovi.github.io/dog-things-react/</code></pre>
+</section>
+
+<section class="demos">
+  <h2>Works with every framework</h2>
+
+  <nav>
+    <ul class="tabs">
+      <li>
+        <button data-for="#react">React</button>
+      </li>
+      <li>
+        <button data-for="#vue">Vue</button>
+      </li>
+      <li>
+        <button data-for="#angular">Angular</button>
+      </li>
+    </ul>
+  
+    <button id="refresh">🔄 Refresh</button>
+  </nav>
+
+  <div class="examples">
+    <div class="example-react">
+      <iframe src="https://bitovi.github.io/dog-things-react/"></iframe>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+body > * {
+  padding: 1em 2em;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  font-size: 100%;
+  font-family: inherit;
+}
+
+/* Header */
+body > header {
+  text-align: center;
+}
+
+/* End header */
+
+/* Installation */
+.installation {
+  display: flex;
+  justify-content: center;
+}
+
+.installation pre {
+  width: 700px;
+}
+
+/* end installation */
+
+/* Demos */
+
+.demos nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.tabs {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.tabs li {
+  display: inline;
+}
+
+/* End demos */

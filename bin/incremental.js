@@ -21,5 +21,5 @@ const cli = meow(`
 });
 
 require("../lib/cli")(cli.input[0], cli.flags);
-const PORT = cli.flags.port || 8080;
+const PORT = cli.flags.port || process.env.PORT || 8080;
 console.error(`Servering your app at http://localhost:${PORT}`);

@@ -32,8 +32,14 @@ body > header {
 /* Demos */
 
 .demos nav {
+  margin-top: 5em;
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+#refresh {
+  width: 100px;
+  justify-self: end;
 }
 
 .tabs {
@@ -44,6 +50,19 @@ body > header {
 
 .tabs li {
   display: inline;
+}
+
+.tabs button {
+  --borderColor: #000;
+  border-left: 1px solid var(--borderColor);
+  border-top: 1px solid var(--borderColor);
+  border-right: 1px solid var(--borderColor);
+  margin-right: 10px;
+  padding: 0.5em 1em;
+}
+
+.tabs li.selected button {
+  background-color: tomato;
 }
 
 .examples > * {

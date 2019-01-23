@@ -1,5 +1,5 @@
 {
-  "name": "@bitovi/incremental",
+  "name": "@bitovi/velocirender",
   "version": "1.0.2",
   "description": "Incremental rendering - Boot your SPA faster",
   "main": "index.js",
@@ -7,11 +7,11 @@
     "test": "node test/test.js"
   },
   "bin": {
-    "incremental": "bin/incremental.js"
+    "velocirender": "bin/velocirender.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitovi/incremental.git"
+    "url": "git+https://github.com/bitovi/velocirender.git"
   },
   "keywords": [
     "ssr",
@@ -25,13 +25,13 @@
   "author": "Bitovi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bitovi/incremental/issues"
+    "url": "https://github.com/bitovi/velocirender/issues"
   },
   "files": [
     "bin",
     "lib"
   ],
-  "homepage": "https://github.com/bitovi/incremental#readme",
+  "homepage": "https://github.com/bitovi/velocirender#readme",
   "dependencies": {
     "@sindresorhus/slugify": "^0.8.0",
     "can-zone-jsdom": "^2.0.1",

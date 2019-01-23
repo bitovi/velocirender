@@ -46,4 +46,15 @@ body > header {
   display: inline;
 }
 
+.examples > * {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.examples iframe {
+  width: 100%;
+  border: 1px solid tomato;
+  min-height: 500px;
+}
 /* End demos */

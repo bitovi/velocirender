@@ -137,7 +137,7 @@ As of today Velocirender rendering is possible in Chrome and Safari >=12.
 
 In browsers that don't support these technology Velocirender will fallback to the traditional SSR method of waiting for a fully rendered page. We call these separate ___strategies___:
 
-* __Velocirender__ strategy is for modern browsers with streaming capabilities.
+* __incremental__ strategy is for modern browsers with streaming capabilities.
 * __legacy__ strategy is for older browsers.
 
 ## Changelog

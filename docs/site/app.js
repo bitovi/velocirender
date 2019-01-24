@@ -4,6 +4,7 @@ hljs.initHighlighting();
 
 // Initialize the tabs
 tabs();
+document.querySelector('#refresh').addEventListener('click', refresh);
 
 function tabs() {
   let tabs = document.querySelector('.tabs');
@@ -18,6 +19,24 @@ function tabs() {
           li.classList.remove('selected');
         }
       }
+
+      let selectedArea = document.querySelector('.selected-example');
+      let example = document.querySelector(ev.target.dataset.for);
+
+      clear(selectedArea);
+      selectedArea.appendChild(document.importNode(example.content, true));
     }
-  })
+  });
+}
+
+function clear(el) {
+  while(el.firstChild) {
+    el.removeChild(el.firstChild);
+  }
+}
+
+function refresh() {
+  for(let frame of document.querySelectorAll('iframe')) {
+    frame.src += '';
+  }
 }

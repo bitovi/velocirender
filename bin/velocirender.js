@@ -6,7 +6,10 @@ const cli = meow(`
       $ velocirender <path>
 
     Options
-      --port, -p     The port to use (default: 8080)
+      --port, -p       The port to use (default: 8080)
+      --key            SSL key to enable HTTP/2
+      --cert           SSL certificate to enable HTTP/2
+      --no-cache-html  Do not cache the initial HTML
 
     Examples
       $ velocirender build/index.html
@@ -19,6 +22,10 @@ const cli = meow(`
         }
     }
 });
+
+if(!cli.input.length) {
+	cli.showHelp();
+}
 
 require("../lib/cli")(cli.input[0], cli.flags);
 const PORT = cli.flags.port || process.env.PORT || 8080;

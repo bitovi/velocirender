@@ -34,13 +34,15 @@
   "homepage": "https://github.com/bitovi/velocirender#readme",
   "dependencies": {
     "@sindresorhus/slugify": "^0.8.0",
+    "can-zone": "^1.0.0",
     "can-zone-jsdom": "^2.0.1",
     "done-serve": "^3.2.0",
     "done-ssr": "^3.2.0",
     "meow": "^5.0.0",
     "mime": "^2.4.0",
     "mkdirp": "^0.5.1",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "useragent": "^2.3.0"
   },
   "devDependencies": {
     "spawn-mochas": "^2.0.0"

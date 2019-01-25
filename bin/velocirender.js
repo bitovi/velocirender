@@ -29,4 +29,4 @@ if(!cli.input.length) {
 
 require("../lib/cli")(cli.input[0], cli.flags);
 const PORT = cli.flags.port || process.env.PORT || 8080;
-console.error(`Servering your app at http://localhost:${PORT}`);
+console.error(`Servering your app at http${cli.flags.key && cli.flags.cert ? 's': ''}://localhost:${PORT}`);

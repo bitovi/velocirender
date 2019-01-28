@@ -11,6 +11,7 @@ const cli = meow(`
       --cert              SSL certificate to enable HTTP/2
       --no-cache-html     Do not cache the initial HTML
       --exp-query-static  An experimental option you should not use
+      --throttle [n]      Throttle requests at n bytes/second
 
     Examples
       $ velocirender build/index.html
@@ -23,6 +24,9 @@ const cli = meow(`
 		},
 		expQueryStatic: {
 			type: 'boolean'
+		},
+		throttle: {
+			type: 'string'
 		}
     }
 });

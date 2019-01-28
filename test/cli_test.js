@@ -23,7 +23,7 @@ describe("CLI", function() {
 			let res = await fetch('http://localhost:8055');
 			let html = await res.text();
 
-			assert.ok(/id="app"/, "Rendered with the executed JavaScript");
+			assert.ok(/id="app"/.test(html), "Rendered with the executed JavaScript");
 		});
 	})
 });

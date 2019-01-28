@@ -43,6 +43,7 @@
     "mkdirp": "^0.5.1",
     "node-fetch": "^2.3.0",
     "quick-lru": "^2.0.0",
+    "throttle": "^1.0.3",
     "useragent": "^2.3.0"
   },
   "devDependencies": {

@@ -4,6 +4,7 @@ hljs.initHighlighting();
 
 // Initialize the tabs
 tabs();
+setTimeout(enableFrames, 500);
 document.querySelector('#refresh').addEventListener('click', refresh);
 
 function tabs() {
@@ -37,6 +38,17 @@ function clear(el) {
 
 function refresh() {
   for(let frame of document.querySelectorAll('iframe')) {
-    frame.src += '';
+	let src = frame.src;
+	frame.src = './loading.html';
+	frame.onload = () => {
+		frame.onload = Function.prototype;
+		frame.src = src;
+	};
   }
+}
+
+function enableFrames() {
+	for(let frame of document.querySelectorAll('iframe')) {
+		frame.src = frame.dataset.src;
+	}
 }

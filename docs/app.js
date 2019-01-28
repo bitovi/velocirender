@@ -25,7 +25,13 @@ function tabs() {
       let example = document.querySelector(ev.target.dataset.for);
 
       clear(selectedArea);
-      selectedArea.appendChild(document.importNode(example.content, true));
+	  selectedArea.appendChild(document.importNode(example.content, true));
+	  for(let frame of selectedArea.querySelectorAll('iframe')) {
+		  frame.onload = () => {
+			  frame.onload = Function.prototype;
+			  frame.src = frame.dataset.src;
+		  };
+	  }
     }
   });
 }

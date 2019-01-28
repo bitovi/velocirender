@@ -6,10 +6,11 @@ const cli = meow(`
       $ velocirender <path>
 
     Options
-      --port, -p       The port to use (default: 8080)
-      --key            SSL key to enable HTTP/2
-      --cert           SSL certificate to enable HTTP/2
-      --no-cache-html  Do not cache the initial HTML
+      --port, -p          The port to use (default: 8080)
+      --key               SSL key to enable HTTP/2
+      --cert              SSL certificate to enable HTTP/2
+      --no-cache-html     Do not cache the initial HTML
+      --exp-query-static  An experimental option you should not use
 
     Examples
       $ velocirender build/index.html
@@ -19,7 +20,10 @@ const cli = meow(`
         port: {
             type: 'string',
             alias: 'p'
-        }
+		},
+		expQueryStatic: {
+			type: 'boolean'
+		}
     }
 });
 

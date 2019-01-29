@@ -1,4 +1,3 @@
-
 const { hljs } = self;
 hljs.initHighlighting();
 
@@ -11,7 +10,7 @@ function tabs() {
   let tabs = document.querySelector('.tabs');
   tabs.addEventListener('click', ev => {
     if(ev.target.localName === 'button') {
-      let parentLi = ev.target.parentNode;
+	  let parentLi = ev.target.parentNode;
 
       for(let li of tabs.children) {
         if(li === parentLi) {
@@ -21,17 +20,15 @@ function tabs() {
         }
       }
 
-      let selectedArea = document.querySelector('.selected-example');
+      let selectedArea = document.querySelector('.example-demos');
       let example = document.querySelector(ev.target.dataset.for);
+
+	  document.querySelector('#refresh').removeEventListener('click', refresh);
 
       clear(selectedArea);
 	  selectedArea.appendChild(document.importNode(example.content, true));
-	  for(let frame of selectedArea.querySelectorAll('iframe')) {
-		  frame.onload = () => {
-			  frame.onload = Function.prototype;
-			  frame.src = frame.dataset.src;
-		  };
-	  }
+	  document.querySelector('#refresh').addEventListener('click', refresh);
+	  refresh();
     }
   });
 }
@@ -43,14 +40,25 @@ function clear(el) {
 }
 
 function refresh() {
+  let loads = [];
   for(let frame of document.querySelectorAll('iframe')) {
-	let src = frame.src;
+	let src = frame.dataset.src;
 	frame.src = './loading.html';
+	let resolve;
+	loads.push(new Promise(r => { resolve = r; }));
 	frame.onload = () => {
 		frame.onload = Function.prototype;
-		frame.src = src;
+		resolve(function(){
+			frame.src = src;
+		});
 	};
   }
+
+  Promise.all(loads).then(fns => {
+	for(let fn of fns) {
+		fn();
+	}
+  });
 }
 
 function enableFrames() {

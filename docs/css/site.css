@@ -1,0 +1,33 @@
+@import 'fonts.css';
+@import 'icons.css';
+@import 'variables.css';
+@import 'normalize.css';
+@import 'base.css';
+@import 'home.css';
+
+
+
+
+/* Installation */
+.installation {
+  display: flex;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+.installation pre {
+  width: 700px;
+}
+
+.installation .docs-links a {
+  color: var(--mainColorLightest);
+  font-size: 140%;
+}
+
+.installation .docs-links a:before {
+  margin-right: 10px;
+}
+
+/* end installation */
+

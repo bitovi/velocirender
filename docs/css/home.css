@@ -24,7 +24,7 @@
 .demos {
     background-color: var(--mainColor);
     color: white;
-    padding: 2em 3em;
+    padding: 2em 3em 0 3em;
 }
 .demos h3 {
     text-align: center;
@@ -55,6 +55,7 @@
     border: none;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .demos .tabs li button .icon {
     font-size: 1.5em;
@@ -83,15 +84,48 @@
 }
 .demos .example iframe {
     width: 100%;
-    border: none ;
+    border: none;
+    background-color: var(--creamColor);
 }
 .demos .example.with-utility iframe {
-    min-height: 570px;
+    min-height: 770px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, .2);
-    
 }
 .demos .example.without-utility iframe {
-    min-height: 530px;
+    min-height: 730px;
     margin-bottom: 1em;
 }
- 
+
+/* Demos Installation */
+.demos .installation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--mainColorDark);
+    color: var(--mainColorLightest);
+    padding: 2em 3em;
+    margin: 3em -3em 0 -3em;
+}
+.demos .installation pre {
+    width: 970px;
+    background-color: black;
+    padding: 2em 0;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+.demos .installation a {
+    color: var(--mainColorLightest);
+    text-decoration: none;
+    opacity: 0.7;
+}
+.demos .installation .docs-links {
+    margin: 2em 0;
+}
+.demos .installation .docs-links a {
+    display: flex;
+    align-items: center;
+}
+.demos .installation .docs-links a .icon {
+    font-size: 1.4em;
+    margin-right: 8px;
+}

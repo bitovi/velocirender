@@ -1,11 +1,9 @@
 <!doctype html>
 <html lang="en">
 <title>Loading!</title>
+<link rel="stylesheet" href="css/site.css">
 <style>
-	html, body { margin: 0; padding: 0; }
-	body {
-		font-family:' Courier New', Courier, monospace;
-	}
+	
 	main {
 		position: fixed;
 		top: 0;
@@ -15,15 +13,27 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background-color: tomato;
+		background-color: var(--creamColor);
 	}
 
-	h1 {
-		color: #fff;
-		font-size: 300%;
+	.loading {
+		color: var(--mainColor);
+		text-align: center;
+		font-size: 1.2em;
 	}
+	.loading .icon{
+		font-size: 2.5em;
+		margin-bottom: 10px;
+	}
+	
 </style>
 
 <main>
-	<h1>Loading!</h1>
+
+	<div class="loading">
+			<div class="icon icon-refresh"></div>
+			<div class="loading-message">Loading</div>
+	</div>
+	
+	
 </main>

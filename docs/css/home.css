@@ -84,14 +84,15 @@
 }
 .demos .example iframe {
     width: 100%;
-    border: none ;
+    border: none;
+    background-color: var(--creamColor);
 }
 .demos .example.with-utility iframe {
-    min-height: 570px;
+    min-height: 770px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, .2);
 }
 .demos .example.without-utility iframe {
-    min-height: 530px;
+    min-height: 730px;
     margin-bottom: 1em;
 }
 

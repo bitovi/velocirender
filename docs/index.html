@@ -2,88 +2,121 @@
 <html lang="en">
 <title>Velocirender</title>
 <meta charset="utf-8">
-<link rel="stylesheet" href="./site.css">
+<link rel="stylesheet" href="css/site.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/atom-one-dark.min.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js" defer></script>
 <script type="module" src="./app.js"></script>
 
-<header>
-  <h1>Velocirender</h1>
-</header>
+<div class="main" role="main">
+  <header class="hero-home">
+    <img src="images/logo-velocirender.svg" class="site-logo" alt="Velocirender Logo"/>
+    <h1>Velocirender</h1>
+    <h2>Accelerated server-side rendering for any framework</h2>
+  </header>
 
-<section class="installation">
-  <pre><code class="language-bash">npm install @bitovi/velocirender
+  <section class="demos">
+    <h3>Try it on:</h2>
 
-node_modules/.bin/velocirender https://bitovi.github.io/dog-things-react/</code></pre>
-</section>
+    <nav>
+      <ul class="tabs">
+        <li class="selected">
+          <button data-for="#example-react">React</button>
+        </li>
+        <li>
+          <button data-for="#example-vue">Vue</button>
+        </li>
+        <li>
+          <button data-for="#example-angular">Angular</button>
+        </li>
+      </ul>
+    
+      <button id="refresh">🔄 Refresh</button>
+    </nav>
 
-<section class="demos">
-  <h2>Works with every framework</h2>
-  <p>This is more of a description of the advantages of this thing.</p>
+    <div class="examples">
+      <div class="selected-example">
+        <div class="example">
+          <h3>Incremental</h3>
+          <iframe src="./loading.html" data-src="https://dog-things-react.herokuapp.com/"></iframe>
+        </div>
 
-  <nav>
-    <ul class="tabs">
-      <li class="selected">
-        <button data-for="#example-react">React</button>
-      </li>
-      <li>
-        <button data-for="#example-vue">Vue</button>
-      </li>
-      <li>
-        <button data-for="#example-angular">Angular</button>
-      </li>
-    </ul>
-  
-    <button id="refresh">🔄 Refresh</button>
-  </nav>
+        <div class="example">
+          <h3>Client-only</h3>
+          <iframe  src="./loading.html" data-src="https://dog-things-react.herokuapp.com/?_velocirender_static_"></iframe>
+        </div>
 
-  <div class="examples">
-    <div class="selected-example">
-      <div class="example">
-        <h3>Incremental</h3>
-        <iframe src="./loading.html" data-src="https://dog-things-react.herokuapp.com/"></iframe>
+        <section class="installation">
+            <pre>
+              <code class="language-bash">npm install @bitovi/velocirender</code>
+              <code>node_modules/.bin/velocirender https://bitovi.github.io/dog-things-react/</code>
+            </pre>
+        </section>
       </div>
 
-      <div class="example">
-        <h3>Client-only</h3>
-        <iframe  src="./loading.html" data-src="https://dog-things-react.herokuapp.com/?_velocirender_static_"></iframe>
-      </div>
+      <template id="example-react">
+        <div class="example">
+          <h3>Incremental</h3>
+          <iframe src="./loading.html" data-src="https://dog-things-react.herokuapp.com/"></iframe>
+        </div>
+
+        <div class="example">
+          <h3>Client-only</h3>
+          <iframe src="./loading.html" data-src="https://dog-things-react.herokuapp.com/?_velocirender_static_"></iframe>
+        </div>
+      </template>
+
+      <template id="example-vue">
+        <div class="example">
+          <h3>Incremental</h3>
+          <iframe src="./loading.html" data-src="https://dog-things-vue.herokuapp.com/"></iframe>
+        </div>
+
+        <div class="example">
+          <h3>Client-only</h3>
+          <iframe src="./loading.html" data-src="https://dog-things-vue.herokuapp.com/?_velocirender_static_"></iframe>
+        </div>
+      </template>
+
+      <template id="example-angular">
+        <div class="example">
+          <h3>Incremental</h3>
+          <iframe src="./loading.html" data-src="https://dog-things-angular.herokuapp.com/"></iframe>
+        </div>
+
+        <div class="example">
+          <h3>Client-only</h3>
+          <iframe src="./loading.html" data-src="https://dog-things-angular.herokuapp.com/?_velocirender_static_"></iframe>
+        </div>
+      </template>
     </div>
+  </section>
 
-    <template id="example-react">
-      <div class="example">
-        <h3>Incremental</h3>
-        <iframe src="./loading.html" data-src="https://dog-things-react.herokuapp.com/"></iframe>
-      </div>
+  <section class="article">
+    <div class="article-content">
+      <h2 class="article-title">Title of the article about Velocirender</h2>
+      <h3 class="article-author">Matthew</h3>
+      <p>
+          Blurb from the article lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, 
+          consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida 
+          dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
+      </p>
 
-      <div class="example">
-        <h3>Client-only</h3>
-        <iframe src="./loading.html" data-src="https://dog-things-react.herokuapp.com/?_velocirender_static_"></iframe>
-      </div>
-    </template>
+      <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. 
+          Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar 
+          sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+          Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin 
+          sapien nunc accuan…
+      </p>
 
-    <template id="example-vue">
-      <div class="example">
-        <h3>Incremental</h3>
-        <iframe src="./loading.html" data-src="https://dog-things-vue.herokuapp.com/"></iframe>
-      </div>
+      <a href="#" class="button">Read More</a>
+    </div>
+  </section>
 
-      <div class="example">
-        <h3>Client-only</h3>
-        <iframe src="./loading.html" data-src="https://dog-things-vue.herokuapp.com/?_velocirender_static_"></iframe>
-      </div>
-    </template>
-
-    <template id="example-angular">
-      <div class="example">
-        <h3>Incremental</h3>
-        <iframe src="./loading.html" data-src="https://dog-things-angular.herokuapp.com/"></iframe>
-      </div>
-
-      <div class="example">
-        <h3>Client-only</h3>
-        <iframe src="./loading.html" data-src="https://dog-things-angular.herokuapp.com/?_velocirender_static_"></iframe>
-      </div>
-    </template>
-  </div>
-</section>
+  <footer>
+    Made by <a href="www.bitovi.com" target="_blank">Bitovi</a>
+    <ul class="social-links">
+      <li><a href="#" class="icon icon-github">Github</a></li>
+    </ul>
+  </footer>
+</div>

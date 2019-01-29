@@ -1,0 +1,13 @@
+:root {
+    --fontFamily: "metropolismedium", Helvetica, Arial, "Lucida Grande", sans-serif;
+    --fontBodyColor: #4A4A4A;
+
+    --mainColor: #4366D8;
+    --mainColorLightest: #CBD1E4;
+    --mainColorDark: #304896;
+
+    --brandColorReact: #00D8FF;
+    --brandColorAngular: #DF2E31;
+    --brandColorVue: #40B883;
+
+}

@@ -1,0 +1,8 @@
+html {
+    font-family: var(--fontFamily);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,6 +1,11 @@
-body > * {
-  padding: 1em 2em;
-}
+@import 'fonts.css';
+@import 'icons.css';
+@import 'variables.css';
+@import 'normalize.css';
+@import 'base.css';
+@import 'home.css';
+
+
 
 button {
   border: none;

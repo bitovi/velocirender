@@ -88,11 +88,11 @@
     background-color: var(--creamColor);
 }
 .demos .example.with-utility iframe {
-    min-height: 770px;
+    min-height: 570px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, .2);
 }
 .demos .example.without-utility iframe {
-    min-height: 730px;
+    min-height: 530px;
     margin-bottom: 1em;
 }
 

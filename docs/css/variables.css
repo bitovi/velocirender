@@ -3,11 +3,10 @@
     --fontBodyColor: #4A4A4A;
 
     --mainColor: #4366D8;
-    --mainColorLightest: #CBD1E4;
+    --mainColorLightest: #FFF;
     --mainColorDark: #304896;
 
-    --brandColorReact: #00D8FF;
-    --brandColorAngular: #DF2E31;
-    --brandColorVue: #40B883;
+    --secondaryColor: #91D18F;
+
 
 }

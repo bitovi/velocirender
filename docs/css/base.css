@@ -1,5 +1,6 @@
 html {
     font-family: var(--fontFamily);
+    color: var(--fontBodyColor);
 }
 
 .main {

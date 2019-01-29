@@ -1,6 +1,3 @@
-const { hljs } = self;
-hljs.initHighlighting();
-
 // Initialize the tabs
 tabs();
 setTimeout(enableFrames, 500);

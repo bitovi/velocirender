@@ -25,17 +25,20 @@
 
     <div class="examples">
       <div class="selected-example">
-        <div class="example">
-          <h3>Incremental</h3>
-          <iframe src="./loading.html" data-src="https://dog-things-react.herokuapp.com/"></iframe>
+        <div class="example-demos">
+          <div class="example with-utility">
+            <h4>With Velocirender:</h4>
+            <iframe src="./loading.html" data-src="https://dog-things-react.herokuapp.com/"></iframe>
+          </div>
+  
+          <div class="example without-utility">
+            <h4>Client-only:</h4>
+            <iframe  src="./loading.html" data-src="https://dog-things-react.herokuapp.com/?_velocirender_static_"></iframe>
+            <button class="button__white" id="refresh"><span class="icon icon-refresh"></span> Refresh</button>
+          </div> 
         </div>
-
-        <div class="example">
-          <h3>Client-only</h3>
-          <iframe  src="./loading.html" data-src="https://dog-things-react.herokuapp.com/?_velocirender_static_"></iframe>
-        </div>
-
-        <button id="refresh">🔄 Refresh</button>
+        
+        
 
         <section class="installation">
             <pre>
@@ -45,6 +48,7 @@
         </section>
       </div>
 
+      <!-- Other tabs
       <template id="example-react">
         <div class="example">
           <h3>Incremental</h3>
@@ -80,6 +84,7 @@
           <iframe src="./loading.html" data-src="https://dog-things-angular.herokuapp.com/?_velocirender_static_"></iframe>
         </div>
       </template>
+      -->
     </div>
   </section>
 

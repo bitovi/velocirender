@@ -7,3 +7,21 @@ html {
     display: flex;
     flex-direction: column;
 }
+
+button {
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    display: inline-flex;
+    background-color: var(--mainColor);
+    color: var(--mainColorLightest);
+}
+button.button__white {
+    background-color: var(--mainColorLightest);
+    color: var(--mainColor);
+}
+
+button .icon {
+    font-size: 1.1em;
+    margin-right: 3px;
+}

@@ -20,7 +20,7 @@
     font-size: 1.2em; 
 }
 
-/* Demos */
+/* Demos Tabs */
 .demos {
     background-color: var(--mainColor);
     color: white;
@@ -33,7 +33,6 @@
 .demos .tabs {
     display: flex;
     justify-content: center;
-    margin-bottom: 2em;
 }
 .demos .tabs li {
     text-decoration: none;
@@ -62,22 +61,37 @@
     margin-right: 10px;
 }
 
-  
 
-  
-
-  
-
-  
-  .examples > * {
+/* Demos Examples */
+.demos .example-demos {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
-  }
-  
-  .examples iframe {
+}
+.demos .example.with-utility {
+    z-index: 1;
+}
+.demos .example.with-utility h4 {
+    padding-top: 60px;
+    background-image: url(../images/icon-velocirender-white.svg);
+    background-repeat: no-repeat;
+}
+.demos .example.without-utility {
+    text-align: right;
+}
+.demos .example.without-utility h4 {
+    padding-top: 80px;
+}
+.demos .example iframe {
     width: 100%;
-    border: 1px solid tomato;
-    min-height: 500px;
-  }
-  /* End demos */
+    border: none ;
+}
+.demos .example.with-utility iframe {
+    min-height: 570px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, .2);
+    
+}
+.demos .example.without-utility iframe {
+    min-height: 530px;
+    margin-bottom: 1em;
+}
+ 

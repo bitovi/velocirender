@@ -11,13 +11,10 @@
 .hero-home .site-logo {
     max-width: 100%;
 }
-.hero-home h1 {
-    text-indent: -99999px;
-    margin: 0;
-}
 .hero-home h2 {
     font-weight: normal;
     font-size: 1.2em; 
+    margin-top: 1.5em;
 }
 
 /* Demos Tabs */
@@ -62,6 +59,17 @@
     margin-right: 10px;
 }
 
+@media screen and (max-width: 500px) {
+    .demos .tabs li button {
+        flex-direction: column;
+    }
+    .demos .tabs li button .icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
 
 /* Demos Examples */
 .demos .example-demos {
@@ -95,6 +103,15 @@
     min-height: 530px;
     margin-bottom: 1em;
 }
+@media screen and (max-width: 900px) {
+    .demos .example-demos {
+        grid-template-columns: auto;
+        margin-top: 1em;
+    }
+    .demos .example.without-utility {
+        text-align: left;
+    }
+}
 
 /* Demos Installation */
 .demos .installation {
@@ -113,6 +130,11 @@
     border-radius: 10px;
     overflow-x: auto;
 }
+@media screen and (max-width: 1028px) {
+    .demos .installation pre {
+        width: 100%;
+    }
+}
 .demos .installation a {
     color: var(--mainColorLightest);
     text-decoration: none;
@@ -120,12 +142,50 @@
 }
 .demos .installation .docs-links {
     margin: 2em 0;
+    display: flex;
 }
 .demos .installation .docs-links a {
     display: flex;
     align-items: center;
+    margin: 0 1em;
 }
 .demos .installation .docs-links a .icon {
     font-size: 1.4em;
-    margin-right: 8px;
+    margin-right: 0.4em;;
+}
+@media screen and (max-width: 700px) {
+    .demos .installation .docs-links {
+        flex-direction: column;
+        align-self: start;
+    }
+    .demos .installation .docs-links a {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+}
+
+
+/* Article Section */
+.article {
+    display: flex;
+    justify-content: center;
+    padding: 4em 2em;
+    background-image: url(../images/graphic-velocirender-bg.svg);
+    background-repeat: repeat-x;
+    background-position: -700px 0;
+}
+.article .article-content {
+    max-width: 670px;
+    padding-left: 2em;
+    border-left: solid 5px var(--secondaryColor);
+}
+.article .article-content .article-title {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+.article .article-content .article-author {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: var(--grayColor);
+    font-weight: normal;
 }

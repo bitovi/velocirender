@@ -1,14 +1,13 @@
 html {
     font-family: var(--fontFamily);
     color: var(--fontBodyColor);
+    font-size: 1.1em;
 }
-
 .main {
     display: flex;
     flex-direction: column;
 }
-
-button {
+button, .button {
     padding: 8px 10px;
     border: none;
     border-radius: 4px;
@@ -20,8 +19,44 @@ button.button__white {
     background-color: var(--mainColorLightest);
     color: var(--mainColor);
 }
-
 button .icon {
     font-size: 1.1em;
     margin-right: 3px;
+}
+p {
+    line-height: 1.5;
+}
+
+a {
+    color: var(--mainColor);
+    text-decoration: none;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+footer {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px -5px 20px rgba(0, 0, 0, .1);
+}
+footer .footer-links {
+    margin-left: 2em;
+}
+footer .bitovi-link {
+    margin-left: 6px;
+}
+footer .footer-links a .icon {
+    font-size: 1.4em;
+    margin-right: 0.7em;
 }

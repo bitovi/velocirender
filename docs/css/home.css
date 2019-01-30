@@ -120,12 +120,40 @@
 }
 .demos .installation .docs-links {
     margin: 2em 0;
+    display: flex;
 }
 .demos .installation .docs-links a {
     display: flex;
     align-items: center;
+    margin: 0 1em;
 }
 .demos .installation .docs-links a .icon {
     font-size: 1.4em;
     margin-right: 8px;
+}
+
+
+/* Article Section */
+.article {
+    display: flex;
+    justify-content: center;
+    padding: 4em 2em;
+    background-image: url(../images/graphic-velocirender-bg.svg);
+    background-repeat: repeat-x;
+    background-position: -700px 0;
+}
+.article .article-content {
+    max-width: 670px;
+    padding-left: 2em;
+    border-left: solid 5px var(--secondaryColor);
+}
+.article .article-content .article-title {
+    font-weight: normal;
+    margin-bottom: 0;
+}
+.article .article-content .article-author {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: var(--grayColor);
+    font-weight: normal;
 }

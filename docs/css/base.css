@@ -31,3 +31,21 @@ a {
     color: var(--mainColor);
     text-decoration: none;
 }
+
+footer {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px -5px 20px rgba(0, 0, 0, .1);
+}
+footer .footer-links {
+    margin-left: 2em;
+}
+footer .bitovi-link {
+    margin-left: 6px;
+}
+footer .footer-links a .icon {
+    font-size: 1.4em;
+    margin-right: 0.7em;
+}

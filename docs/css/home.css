@@ -11,13 +11,10 @@
 .hero-home .site-logo {
     max-width: 100%;
 }
-.hero-home h1 {
-    text-indent: -99999px;
-    margin: 0;
-}
 .hero-home h2 {
     font-weight: normal;
     font-size: 1.2em; 
+    margin-top: 1.5em;
 }
 
 /* Demos Tabs */

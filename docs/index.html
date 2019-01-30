@@ -1,156 +1,169 @@
 <!doctype html>
 <html lang="en">
-<title>Velocirender</title>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-<link rel="stylesheet" href="css/site.css">
-<script type="module" src="./app.js"></script>
 
-<div class="main" role="main">
-  <header class="hero-home">
-    <img src="images/logo-velocirender.svg" class="site-logo" alt="Velocirender Logo"/>
-    <h1>Velocirender</h1>
-    <h2>Accelerated server-side rendering for any framework</h2>
-  </header>
+  <head>
+    <title>Velocirender</title>
 
-  <section class="demos">
-    <h3>Try it on:</h2>
+    <meta charset="utf-8">
+    <meta name="description" content="Accelerated server-side rendering for any framework by Bitovi">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
-    <nav class="tabs">
-      <li class="selected"><button data-for="#example-react"><span class="icon icon-react"></span> React</button></li>
-      <li><button data-for="#example-vue"><span class="icon icon-vue-dot-js"></span> Vue</button></li>
-      <li><button data-for="#example-angular"><span class="icon icon-angular"></span> Angular</button></li>
-    </nav>
+    <link rel="stylesheet" href="css/site.css">
+    <script type="module" src="./app.js"></script>
+  </head>
 
-    <div class="examples">
-      <div class="selected-example">
-        <div class="example-demos">
-          <div class="example with-utility">
-            <h4>With Velocirender:</h4>
-            <iframe src="./loading.html" data-src="https://dog-things-react.herokuapp.com/"></iframe>
+  <body>
+    <div class="main" role="main">
+      <header class="hero-home">
+        <img src="images/logo-velocirender.svg" class="site-logo" alt="Velocirender Logo"/>
+        <h1 class="visuallyhidden">Velocirender</h1>
+        <h2>Accelerated server-side rendering for any framework</h2>
+      </header>
+
+      <section class="demos">
+        <h3>Try it on:</h2>
+
+        <ul class="tabs">
+          <li class="selected"><button data-for="#example-react"><span class="icon icon-react" aria-hidden="true"></span> React</button></li>
+          <li><button data-for="#example-vue"><span class="icon icon-vue-dot-js" aria-hidden="true"></span> Vue</button></li>
+          <li><button data-for="#example-angular"><span class="icon icon-angular" aria-hidden="true"></span> Angular</button></li>
+        </ul>
+
+        <div class="examples" role="contentinfo">
+          <div class="selected-example">
+            <div class="example-demos">
+              <div class="example with-utility">
+                <h4>With Velocirender:</h4>
+                <iframe src="./loading.html" data-src="https://dog-things-react.herokuapp.com/"></iframe>
+              </div>
+      
+              <div class="example without-utility">
+                <h4>Client-only:</h4>
+                <iframe  src="./loading.html" data-src="https://dog-things-react.herokuapp.com/?_velocirender_static_"></iframe>
+                <button class="button__white" id="refresh"><span class="icon icon-refresh"></span> Refresh</button>
+              </div> 
+            </div>
+            
+            <section class="installation">
+              <h4>On your console:</h4>
+                <pre>
+                  <code class="language-bash">npm install @bitovi/velocirender</code>
+                  <code class="language-bash">node_modules/.bin/velocirender https://bitovi.github.io/dog-things-react/</code>
+                </pre>
+          
+              <nav class="docs-links">
+                <a href="https://github.com/bitovi/velocirender" target="_blank">
+                  <span class="icon icon-github" aria-hidden="true"></span>
+                  Github Repo
+                </a>
+                <a href="https://github.com/bitovi/velocirender/blob/master/docs/getting-started.md" target="_blank">
+                  <span class="icon icon-book-reference" aria-hidden="true"></span>
+                  Getting Started Guide 
+                </a>
+                <a href="https://github.com/bitovi/dog-things-react" target="_blank">
+                  <span class="icon icon-react" aria-hidden="true"></span>
+                  React Demo
+                </a>
+                <a href="#" target="_blank">
+                  <span class="icon icon-slack" aria-hidden="true"></span>
+                  Slack Channel
+                </a>
+              </nav>
+            </section>
           </div>
-  
-          <div class="example without-utility">
-            <h4>Client-only:</h4>
-            <iframe  src="./loading.html" data-src="https://dog-things-react.herokuapp.com/?_velocirender_static_"></iframe>
-            <button class="button__white" id="refresh"><span class="icon icon-refresh"></span> Refresh</button>
-          </div> 
+
+          <template id="example-react">
+            <div class="example with-utility">
+              <h4>With Velocirender:</h4>
+              <iframe data-src="https://dog-things-react.herokuapp.com/" title="Dog Things React Demo with Velocirender"></iframe>
+            </div>
+
+            <div class="example without-utility">
+              <h4>Client-only:</h4>
+              <iframe data-src="https://dog-things-react.herokuapp.com/?_velocirender_static_" title="Dog Things React Demo Client-only"></iframe>
+              <button class="button__white" id="refresh"><span class="icon icon-refresh" aria-hidden="true"></span> Refresh</button>
+            </div>
+          </template>
+
+          <template id="example-vue">
+            <div class="example with-utility">
+              <h4>With Velocirender:</h4>
+              <iframe data-src="https://dog-things-vue.herokuapp.com/" title="Dog Things Vue Demo with Velocirender"></iframe>
+            </div>
+
+            <div class="example without-utility">
+              <h4>Client-only:</h4>
+              <iframe data-src="https://dog-things-vue.herokuapp.com/?_velocirender_static_" title="Dog Things Vue Demo Client-only"></iframe>
+              <button class="button__white" id="refresh"><span class="icon icon-refresh" aria-hidden="true"></span> Refresh</button>
+            </div>
+          </template>
+
+          <template id="example-angular">
+            <div class="example with-utility">
+              <h4>With Velocirender:</h4>
+              <iframe data-src="https://dog-things-angular.herokuapp.com/"  title="Dog Things Angular Demo with Velocirender"></iframe>
+            </div>
+
+            <div class="example without-utility">
+              <h4>Client-only:</h4>
+              <iframe data-src="https://dog-things-angular.herokuapp.com/?_velocirender_static_" title="Dog Things Angular Demo with Client-only"></iframe>
+              <button class="button__white" id="refresh"><span class="icon icon-refresh" aria-hidden="true"></span> Refresh</button>
+            </div>
+          </template>
         </div>
-        
-        <section class="installation">
-          <h4>On your console:</h4>
-            <pre>
-              <code class="language-bash">npm install @bitovi/velocirender</code>
-              <code class="language-bash">node_modules/.bin/velocirender https://bitovi.github.io/dog-things-react/</code>
-			      </pre>
-			
-          <nav class="docs-links">
-            <a href="https://github.com/bitovi/velocirender" target="_blank">
-              <span class="icon icon-github"></span>
-              Github Repo
+      </section>
+
+      
+      <section class="article" role="complementary">
+        <div class="article-content">
+          <img src="images/author_matthew.jpg" height="70" width="70" alt="Matthew Phillips Avatar" />
+          <a href="#">
+              <h2 class="article-title">Title of the article about Velocirender</h2>
+          </a>
+          <h3 class="article-author">By Matthew Phillips</h3>
+          <p>
+              Blurb from the article lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, 
+              consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida 
+              dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
+          </p>
+
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. 
+              Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar 
+              sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+              Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin 
+              sapien nunc accuan…
+          </p>
+
+          <a href="#" class="button">Read More</a>
+        </div>
+      </section>
+      
+
+      <footer>
+        Made by 
+        <a class="bitovi-link" href="https://www.bitovi.com/" target="_blank">Bitovi</a>
+        <nav class="footer-links">
+            <a href="http://github.com/bitovi" target="_blank">
+              <span class="icon icon-github" aria-hidden="true"></span>
+              <span class="visuallyhidden">Github</span>
             </a>
-            <a href="https://github.com/bitovi/velocirender/blob/master/docs/getting-started.md" target="_blank">
-              <span class="icon icon-book-reference"></span>
-              Getting Started Guide 
+            <a href="http://twitter.com/bitovi" target="_blank">
+              <span class="icon icon-twitter" aria-hidden="true"></span>
+              <span class="visuallyhidden">Twitter</span>
             </a>
-            <a href="https://github.com/bitovi/dog-things-react" target="_blank">
-              <span class="icon icon-react"></span>
-              React Demo
+            <a href="https://www.linkedin.com/company/bitovi" target="_blank">
+              <span class="icon icon-linkedin" aria-hidden="true"></span>
+              <span class="visuallyhidden">Linkedin</span>
             </a>
             <a href="#" target="_blank">
-              <span class="icon icon-slack"></span>
-              Slack Channel
+              <span class="icon icon-slack" aria-hidden="true"></span>
+              <span class="visuallyhidden">Slack</span>
             </a>
           </nav>
-        </section>
-      </div>
 
-      <template id="example-react">
-        <div class="example with-utility">
-          <h4>With Velocirender:</h4>
-          <iframe data-src="https://dog-things-react.herokuapp.com/"></iframe>
-        </div>
-
-        <div class="example without-utility">
-          <h4>Client-only:</h4>
-          <iframe data-src="https://dog-things-react.herokuapp.com/?_velocirender_static_"></iframe>
-          <button class="button__white" id="refresh"><span class="icon icon-refresh"></span> Refresh</button>
-        </div>
-      </template>
-
-      <template id="example-vue">
-        <div class="example with-utility">
-          <h4>With Velocirender:</h4>
-          <iframe data-src="https://dog-things-vue.herokuapp.com/"></iframe>
-        </div>
-
-        <div class="example without-utility">
-          <h4>Client-only:</h4>
-          <iframe data-src="https://dog-things-vue.herokuapp.com/?_velocirender_static_"></iframe>
-          <button class="button__white" id="refresh"><span class="icon icon-refresh"></span> Refresh</button>
-        </div>
-      </template>
-
-      <template id="example-angular">
-        <div class="example with-utility">
-          <h4>With Velocirender:</h4>
-          <iframe data-src="https://dog-things-angular.herokuapp.com/"></iframe>
-        </div>
-
-        <div class="example without-utility">
-          <h4>Client-only:</h4>
-          <iframe data-src="https://dog-things-angular.herokuapp.com/?_velocirender_static_"></iframe>
-          <button class="button__white" id="refresh"><span class="icon icon-refresh"></span> Refresh</button>
-        </div>
-      </template>
+      </footer>
+      
     </div>
-  </section>
-
-  
-  <section class="article">
-    <div class="article-content">
-      <img src="images/author_matthew.jpg" height="70" width="70" />
-      <a href="#">
-          <h2 class="article-title">Title of the article about Velocirender</h2>
-      </a>
-      <h3 class="article-author">By Matthew Phillips</h3>
-      <p>
-          Blurb from the article lorem ipsum dolor sit amet Lorem ipsum dolor sit amet, 
-          consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida 
-          dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
-      </p>
-
-      <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. 
-          Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar 
-          sic tempor. Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
-          Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus pronin 
-          sapien nunc accuan…
-      </p>
-
-      <a href="#" class="button">Read More</a>
-    </div>
-  </section>
-  
-
-  <footer>
-    Made by 
-    <a class="bitovi-link" href="https://www.bitovi.com/" target="_blank">Bitovi</a>
-    <nav class="footer-links">
-        <a href="https://github.com/bitovi/" target="_blank">
-          <span class="icon icon-github"></span>
-        </a>
-        <a href="http://twitter.com/bitovi">
-          <span class="icon icon-twitter" target="_blank"></span>
-        </a>
-        <a href="#">
-          <span class="icon icon-linkedin" target="_blank"></span>
-        </a>
-        <a href="#">
-          <span class="icon icon-slack" target="_blank"></span>
-        </a>
-      </nav>
-
-  </footer>
-  
-</div>
+  </body>
+</html>

@@ -62,6 +62,17 @@
     margin-right: 10px;
 }
 
+@media screen and (max-width: 500px) {
+    .demos .tabs li button {
+        flex-direction: column;
+    }
+    .demos .tabs li button .icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+
 
 /* Demos Examples */
 .demos .example-demos {
@@ -95,6 +106,14 @@
     min-height: 530px;
     margin-bottom: 1em;
 }
+@media screen and (max-width: 900px) {
+    .demos .example-demos {
+        grid-template-columns: auto;
+    }
+    .demos .example.without-utility {
+        text-align: left;
+    }
+}
 
 /* Demos Installation */
 .demos .installation {
@@ -113,6 +132,11 @@
     border-radius: 10px;
     overflow-x: auto;
 }
+@media screen and (max-width: 1028px) {
+    .demos .installation pre {
+        width: 100%;
+    }
+}
 .demos .installation a {
     color: var(--mainColorLightest);
     text-decoration: none;
@@ -130,6 +154,16 @@
 .demos .installation .docs-links a .icon {
     font-size: 1.4em;
     margin-right: 0.4em;;
+}
+@media screen and (max-width: 700px) {
+    .demos .installation .docs-links {
+        flex-direction: column;
+        align-self: start;
+    }
+    .demos .installation .docs-links a {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
 }
 
 

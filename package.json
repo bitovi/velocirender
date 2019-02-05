@@ -1,6 +1,6 @@
 {
   "name": "@bitovi/velocirender",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Incremental rendering - Boot your SPA faster",
   "main": "index.js",
   "scripts": {

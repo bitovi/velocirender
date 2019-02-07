@@ -103,6 +103,10 @@
     min-height: 530px;
     margin-bottom: 1em;
 }
+
+.demos #times {
+	text-align: center;
+}
 @media screen and (max-width: 900px) {
     .demos .example-demos {
         grid-template-columns: auto;

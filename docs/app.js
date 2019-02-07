@@ -2,6 +2,9 @@
 tabs();
 setTimeout(enableFrames, 500);
 document.querySelector('#refresh').addEventListener('click', refresh);
+window.addEventListener('message', onMessage);
+
+let speedMap = new Map();
 
 function tabs() {
   let tabs = document.querySelector('.tabs');
@@ -38,7 +41,11 @@ function clear(el) {
 
 function refresh() {
   let loads = [];
+  speedMap.clear();
+  let i = 0;
   for(let frame of document.querySelectorAll('iframe')) {
+	let data = [];
+	speedMap.set(i, data);
 	let src = frame.dataset.src;
 	frame.src = './loading.html';
 	let resolve;
@@ -46,9 +53,11 @@ function refresh() {
 	frame.onload = () => {
 		frame.onload = Function.prototype;
 		resolve(function(){
+			data.push(Date.now());
 			frame.src = src;
 		});
 	};
+	i++;
   }
 
   Promise.all(loads).then(fns => {
@@ -58,8 +67,47 @@ function refresh() {
   });
 }
 
+function onMessage(ev) {
+	let now = Date.now();
+	for(var i = 0; i < window.frames.length; i++) {
+		if(window.frames[i] === ev.source) {
+			break;
+		}
+	}
+	let data = speedMap.get(i);
+	data.push(now);
+
+	function allDone() {
+		let done = true;
+		for(let [,a] of speedMap) {
+			if(a.length < 2) done = false;
+		}
+		return done;
+	}
+
+	if(ev.data === "first-item") {
+		if(allDone()) {
+			let ir = speedMap.get(0)[1];
+			let c = speedMap.get(1)[1];
+			let el = document.querySelector('#times');
+			if(ir < c) {
+				let diff = c - ir;
+				el.textContent = `Velocirender ${diff}ms faster 😃`;
+			} else {
+				let diff = ir - c;
+				el.textContent = `Velocirender ${diff}ms slower ☹️`;
+			}
+			
+		}
+	}
+}
+
 function enableFrames() {
+	let i = 0;
 	for(let frame of document.querySelectorAll('iframe')) {
+		let data = [Date.now()];
+		speedMap.set(i, data);
 		frame.src = frame.dataset.src;
+		i++;
 	}
 }

@@ -42,6 +42,7 @@ function clear(el) {
 function refresh() {
   let loads = [];
   speedMap.clear();
+  document.querySelector('#times').textContent = '';
   let i = 0;
   for(let frame of document.querySelectorAll('iframe')) {
 	let data = [];

@@ -183,6 +183,9 @@
     padding-left: 2em;
     border-left: solid 5px var(--secondaryColor);
 }
+.article .article-content .button {
+    margin-top: 1em;
+}
 .article .article-content .article-title {
     font-weight: normal;
     margin-bottom: 0;

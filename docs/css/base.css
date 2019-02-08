@@ -23,8 +23,17 @@ button .icon {
     font-size: 1.1em;
     margin-right: 3px;
 }
-p {
+p,
+li {
     line-height: 1.5;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+ul {
+    margin-bottom: 1em;
 }
 
 a {

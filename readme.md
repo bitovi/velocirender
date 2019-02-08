@@ -67,6 +67,9 @@ node_modules/.bin/velocirender https://bitovi.github.io/dog-things-react/
 The following CLI flags are available for use:
 
 * __--port__: Specify the port to use, otherwise __8080__ will be used.
+* __--key__: An SSL key. This should match what is provided to [Node https](https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener).
+* __--cert__: The SSL certificate. This should match what is provided to [Node https](https://nodejs.org/api/https.html#https_https_createserver_options_requestlistener).
+* __--no-cache-html__: By default Velocirender caches the HTML skeleton (everything that occurs before API requests are made). For the vast majority of apps this is fine, but if you do something weird like write a `Math.random()` into your output you might need this (file an issue to discuss first, you almost definitely don't need it).
 
 #### Cache considerations
 
@@ -128,6 +131,21 @@ __Velocirender__ takes a handler function as its only argument. That function re
 * __response__: The [response](https://nodejs.org/api/http.html#http_class_http_serverresponse) object from the request. Note that can set headers on this response, but you won't want to call `.write()` or `.end()` as Velocirender calls those itself.
 * __document__: A [document](https://developer.mozilla.org/en-US/docs/Web/API/Document) that is scoped to this request. You can modify this document just as you would in a browser. Typically you'll want to create a root element to render your application onto. This document is backed by [jsdom](https://github.com/jsdom/jsdom).
 * __window__: A [window](https://developer.mozilla.org/en-US/docs/Web/API/Window) object. This contains many (but not all) of the properties that are seen in a browser window.
+
+
+#### velocirender.serve()
+
+A second API works like the CLI. Give it a path or URL and options that match the CLI's options. It will create a server for the app.
+
+```js
+const velocirender = require('@bitovi/velocirender');
+
+const server = velocirender.serve('https://bitovi.github.io/dog-things-react/', {
+  port: 8089
+});
+```
+
+The second argument options should match the available [CLI flags](#flags).
 
 ## Browser Compatibility
 

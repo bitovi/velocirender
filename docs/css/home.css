@@ -128,11 +128,11 @@
     margin: 3em -3em 0 -3em;
 }
 .demos .installation pre {
-    width: 970px;
     background-color: black;
-    padding: 2em 0;
+    padding: 2em;
     border-radius: 10px;
     overflow-x: auto;
+    white-space: pre-line;
 }
 @media screen and (max-width: 1028px) {
     .demos .installation pre {

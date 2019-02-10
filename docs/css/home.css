@@ -10,6 +10,7 @@
 } 
 .hero-home .site-logo {
     max-width: 100%;
+    max-height: 227px;
 }
 .hero-home h2 {
     font-weight: normal;

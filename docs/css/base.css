@@ -19,6 +19,17 @@ button.button__white {
     background-color: var(--mainColorLightest);
     color: var(--mainColor);
 }
+.button.button__blueCTA {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    padding: 15px 30px;
+    color: var(--mainColorLightest);
+}
+.button.button__blueCTA:hover {
+    transition: background-color 0.5s ease;
+    background-color: transparent;
+}
 button .icon {
     font-size: 1.1em;
     margin-right: 3px;

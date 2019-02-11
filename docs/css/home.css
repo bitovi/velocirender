@@ -145,6 +145,12 @@
     text-decoration: none;
     opacity: 0.7;
 }
+.demos .installation a.button__blueCTA {
+    opacity: 1;
+    margin-bottom: 1em;
+    margin-top: 1em;
+} 
+
 .demos .installation .docs-links {
     margin: 2em 0;
     display: flex;
